@@ -1,5 +1,5 @@
-import Like from "../models/like";
-import CrudRepository from "./crud.repository";
+import Like from "../models/like.js";
+import CrudRepository from "./crud.repository.js";
 
 class likeRepository extends CrudRepository{
     constructor(){

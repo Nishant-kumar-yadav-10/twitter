@@ -1,5 +1,5 @@
-import TweetRepository from "../repositories/Tweet.Repository.js";
-import likeRepository from "../repositories/like.repository.js";
+import TweetRepository from "../repository/tweet.repository.js";
+import likeRepository from "../repository/like.repository.js";
 
 
 class LikeService{
@@ -46,5 +46,6 @@ if(exists){
 return isAdded
 
 }}
+export default LikeService
     
 

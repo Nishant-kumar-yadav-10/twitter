@@ -1,11 +1,15 @@
-import LIkeService from "../services/like.service.js";
-const likeService =new LIkeService();
+import LikeService from "../services/Like.Service.js";
+const likeService =new LikeService();
 
-export const toggleLike=async(res,req)=>{
+export const toggleLike=async(req,res)=>{
+
+      console.log((req.query.modelId))
     try{
-        const response=await likeService.toggleLike(req.query.modelId,req.quey.modelType,req.body.userId);
+       
+        const response=await likeService.toggleLike(req.query.modelId,req.query.modelType,req.body.userId);
+       
         return res.status(200).json({
-            sucess:true,
+            success:true,
             data:response,
             error:null,
             message:"Request completed successfully"
@@ -13,7 +17,7 @@ export const toggleLike=async(res,req)=>{
 
     }catch(error){
         console.log(error)
-        return res.statsus(500).json({
+        return res.status(500).json({
             sucess:false,
             data:null,
             error:error,
@@ -22,3 +26,4 @@ export const toggleLike=async(res,req)=>{
 
     }
 }
+export default toggleLike;

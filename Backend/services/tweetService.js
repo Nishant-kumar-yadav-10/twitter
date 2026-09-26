@@ -3,7 +3,7 @@ import { TweetRepository,HashtagRepository } from "../repository/index.js"
 class TweetService {
     constructor(){
  this.tweetRepository=new TweetRepository()
- this.HashtagRepository=new HashtagRepository
+ this.HashtagRepository=new HashtagRepository()
     }
 
     async create(data){

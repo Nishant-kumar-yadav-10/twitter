@@ -1,37 +1,40 @@
 import Tweet from "../models/tweet.model.js";
-class CrudRepository{
-    constructor(model){
-        this.model=model;
-    }
-    async create(data){
-        try {
-       
-            const result=await this.model.create(data)
-            return result
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    async destroy(id){
-        try {
-            const result=await this.model.findByIdAndDelete(id)
-            return result
-        } catch (error) {
-            console.log(error)
-        }
-
+class CrudRepository {
+    constructor(model) {
+        this.model = model;
     }
 
-    async get(id){
+    async create(data) {
         try {
-            const result=await this.model.findById(id)
-return result
+            console.log(data);
+            const result = await this.model.create(data);
+            return result;
         } catch (error) {
-            console.log(error)
+            console.log("Something went wrong in crud repo");
+            throw error;
         }
     }
 
-    
+    async destroy(id) {
+        try {
+            const result = await this.model.findByIdAndDelete(id);
+            return result;
+        } catch (error) {
+            console.log("Something went wrong in crud repo");
+            throw error;
+        }
+    }
+
+    async get(id) {
+        try {
+            const result = await this.model.findById(id);
+            return result;
+        } catch (error) {
+            console.log("Something went wrong in crud repo");
+            throw error;
+        }
+    }
+
     async getAll() {
         try {
             const result = await this.model.find({});
@@ -51,5 +54,7 @@ return result
             throw error;
         }
     }
+
 }
+
 export default CrudRepository;
