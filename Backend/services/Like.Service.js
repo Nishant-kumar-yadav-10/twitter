@@ -1,5 +1,5 @@
-import TweetRepository from "../repository/tweet.repository.js";
-import likeRepository from "../repository/like.repository.js";
+import {TweetRepository,likeRepository} from "../repository/index.js";
+
 
 
 class LikeService{
